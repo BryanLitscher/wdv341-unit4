@@ -16,11 +16,17 @@
 	//Method 2.  This method pulls the individual name-value pairs from the $_POST using the name
 	//as the key in an associative array.  
 	
-	$inFirstName = $_POST["firstName"];		//Get the value entered in the first name field
-	$inLastName = $_POST["lastName"];		//Get the value entered in the last name field
+	$inFirstName = $_POST["firstNameHASH"];		//Get the value entered in the first name field
+	$inLastName = $_POST["lastNameHASH"];		//Get the value entered in the last name field
 	$inSchool = $_POST["school"];			//Get the value entered in the school field
+	$inGender = $_POST["gender"];
+	$inVehicle1 = array_key_exists("vehicle1",$_POST)? $_POST["vehicle1"]:"";
+	$inVehicle2 = array_key_exists("vehicle2",$_POST)? $_POST["vehicle2"]:"";
+	$inBrand = $_POST["cars"];
 	
+	$Honeypot = $_POST["firstName"]. $_POST["lastName"];		//Get the value entered in the first name field
 
+//array_key_exists("Volvo",$a)
 ?>
 <!DOCTYPE html>
 <head>
@@ -47,7 +53,13 @@
 <p>School: <?php echo $inSchool; ?></p>
 <p>First Name: <?php echo $inFirstName; ?></p>
 <p>Last Name: <?php echo $inLastName; ?></p>
+<p>Gender: <?php echo $inGender; ?></p>
+<p>Vehicle 1: <?php echo $inVehicle1; ?></p>
+<p>Vehicle 2: <?php echo $inVehicle2; ?></p>
+<p>Brand: <?php echo $inBrand; ?></p>
 
+<?php echo $inBrand?"SPAM":"Passed HP test"; ?>
+<?php echo $Honeypot?"SPAM":"Passed HP test"; ?>
 
 </body>
 </html>

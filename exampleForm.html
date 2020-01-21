@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <html>
+<!-- http://localhost/wdv341/unit4/wdv341-form-handler-assignment-code\exampleForm.html  
+
+Honeypot
+https://dev.to/felipperegazio/how-to-create-a-simple-honeypot-to-protect-your-web-forms-from-spammers--25n8
+
+-->
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>WDV341 Intro PHP - Form Example</title>
+
+<style>
+    .ohnohoney{
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 0;
+        width: 0;
+        z-index: -1;
+    }
+</style>
+
+
 </head>
 
 <body>
@@ -14,18 +35,42 @@
 <p>Field <strong>'value</strong>' - The value entered in the field. This will vary depending upon the HTML form element.</p>
 <form id="form1" name="form1" method="post" action="formHandler.php">
   <p>First Name: 
-    <input type="text" name="firstName" id="firstName" />
+    <input type="text" name="firstNameHASH" id="firstNameHASH" />
 </p>
   <p>Last Name: 
-    <input type="text" name="lastName" id="lastName" />
+    <input type="text" name="lastNameHASH" id="lastNameHASH" />
   </p>
   <p>School: 
     <input type="text" name="school" id="school" />
   </p>
   <p>
-    <input type="submit" name="button" id="button" value="Submit" />
-    <input type="reset" name="button2" id="button2" value="Reset" />
+	<input type="radio" name="gender" value="male"> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<input type="radio" name="gender" value="other"> Other
   </p>
+  <p>
+	<input type="checkbox" name="vehicle1" value="Bike">I have a bike<br>
+	<input type="checkbox" name="vehicle2" value="Car">I have a car 
+  </p>
+  
+  <p>
+  <select name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>  
+  </p>
+  
+  <input class="ohnohoney" autocomplete="off" type="text" name="firstName" id="firstName" />
+  <input class="ohnohoney" autocomplete="off" type="text" name="lastName" id="lastName" />
+  
+  <p>
+    <input  type="submit" name="button" id="button" value="Submit" />
+    <input  type="reset" name="button2" id="button2" value="Reset" />
+  </p>
+  
+  
 </form>
 
 <p>&nbsp;</p>
