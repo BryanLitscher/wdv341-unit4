@@ -58,7 +58,7 @@
 <p>Vehicle 2: <?php echo $inVehicle2; ?></p>
 <p>Brand: <?php echo $inBrand; ?></p>
 
-<?php echo $inBrand?"SPAM":"Passed HP test"; ?>
+
 <?php echo $Honeypot?"SPAM":"Passed HP test"; ?>
 
 </body>
